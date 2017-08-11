@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     int n = atoi(argv[1]);
-    if (argc < (n + 3)) {
+    if (argc != (n + 3)) {
         fprintf(stderr, "Fatal Error: Invalid number of integer supplied\n");
         return EXIT_FAILURE;
     }
