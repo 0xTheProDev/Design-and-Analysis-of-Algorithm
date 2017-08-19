@@ -4,10 +4,7 @@
  * Repo: Design-And-Analysis-of-Algorithm [MIT LICENSE]
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int binarySearch(int, int*, int);
+#include "BinarySearch.h"
 
 int main(int argc, char** argv) {
     if (argc < 2) {
@@ -27,24 +24,4 @@ int main(int argc, char** argv) {
     printf("Key value given = %d\n", key);
     printf("Key found at = %d\n", binarySearch(n, A, key));
     return EXIT_SUCCESS;
-}
-
-int binarySearch(int n, int* A, int key) {
-    int hi = n, lo = 0, mid;
-    do {
-        // Mid value
-        mid = (hi + lo) / 2;
-        if (A[mid] == key) {
-            // Found Key
-            return mid;
-        } else if (A[mid] > key) {
-            // Key is in the left
-            hi = mid - 1;
-        } else {
-            // Key is in the right
-            lo = mid + 1;
-        }
-    } while(lo <= hi);
-    // Key not found
-    return -1;
 }
