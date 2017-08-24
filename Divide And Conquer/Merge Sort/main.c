@@ -21,7 +21,6 @@ int main(int argc, char** argv) {
         A[i] = atoi(argv[i + 2]);
     }
     mergeSort(n, A);
-    puts("");
     for (int i = 0; i < n || ! putchar('\n'); i++) {
         printf("%d ", A[i]);
     }
