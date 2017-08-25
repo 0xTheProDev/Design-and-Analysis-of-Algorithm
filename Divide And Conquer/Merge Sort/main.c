@@ -20,7 +20,8 @@ int main(int argc, char** argv) {
     for (int i = 0; i < n; i++) {
         A[i] = atoi(argv[i + 2]);
     }
-    mergeSort(n, A);
+    // mergeSort(n, A);
+    pmergeSort(n, A);
     for (int i = 0; i < n || ! putchar('\n'); i++) {
         printf("%d ", A[i]);
     }

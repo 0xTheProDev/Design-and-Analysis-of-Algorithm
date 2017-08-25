@@ -19,5 +19,6 @@
  */
 
 void mergeSort(int, int*);
+void pmergeSort(int, int*);
 
 #endif
