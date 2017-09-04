@@ -1,10 +1,10 @@
 /*
- * Merge Sort
+ * Quick Sort
  * Author: Progyan Bhattacharya <progyanb@acm.org>
  * Repo: Design-and-Analysis-of-Algorithm [MIT LICENSE]
  */
 
-#include "MergeSort.h"
+#include "QuickSort.h"
 
 int main(int argc, char** argv) {
     if (argc < 2) {
@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
     for (int i = 0; i < n; i++) {
         A[i] = atoi(argv[i + 2]);
     }
-    mergeSort(n, A);
+    quickSort(n, A);
     for (int i = 0; i < n || ! putchar('\n'); i++) {
         printf("%d ", A[i]);
     }
