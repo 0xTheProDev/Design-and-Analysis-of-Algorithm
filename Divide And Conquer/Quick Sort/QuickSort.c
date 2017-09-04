@@ -17,9 +17,9 @@ static int partition(int* A, int beg, int end) {
     int i = beg - 1;
     for (int j = beg; j < end; j++) {
         if (A[j] <=  pivot) {
-	    i++;
-	    swap(A, i, j);
-	}
+    	    i++;
+    	    swap(A, i, j);
+	   }
     }
     swap(A, i + 1, end);
     return (i + 1);
