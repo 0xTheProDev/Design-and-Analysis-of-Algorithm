@@ -6,6 +6,10 @@
 
 #include "QuickSort.h"
 
+int cmp(const void* a, const void* b) {
+    return (*(int*)a - *(int*)b);
+}
+
 int main(int argc, char** argv) {
     if (argc < 2) {
         fprintf(stderr, "Usage: %s [n] [n integers]\n", argv[0]);
@@ -20,7 +24,7 @@ int main(int argc, char** argv) {
     for (int i = 0; i < n; i++) {
         A[i] = atoi(argv[i + 2]);
     }
-    quickSort(n, A);
+    quickSort(A, n, cmp);
     for (int i = 0; i < n || ! putchar('\n'); i++) {
         printf("%d ", A[i]);
     }

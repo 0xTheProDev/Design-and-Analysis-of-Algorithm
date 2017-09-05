@@ -12,11 +12,11 @@ static void swap(int* A, int i, int j) {
     A[j] = temp;
 }
 
-static int partition(int* A, int beg, int end) {
+static int partition(int* A, int beg, int end, F cmp) {
     int pivot = A[end];
     int i = beg - 1;
     for (int j = beg; j < end; j++) {
-        if (A[j] <=  pivot) {
+        if (cmp(&A[j], &pivot) < 0) {
     	    i++;
     	    swap(A, i, j);
 	   }
@@ -25,15 +25,15 @@ static int partition(int* A, int beg, int end) {
     return (i + 1);
 }
 
-static void quick(int* A, int start, int end) {
+static void quick(int* A, int start, int end, F cmp) {
     if (end < start) {
         return;
     }
-    int middle = partition(A, start, end);
-    quick(A, start, middle - 1);
-    quick(A, middle + 1, end);
+    int middle = partition(A, start, end, cmp);
+    quick(A, start, middle - 1, cmp);
+    quick(A, middle + 1, end, cmp);
 }
 
-void quickSort(int n, int* A) {
-    quick(A, 0, n - 1);
+void quickSort(int* A, int n, F cmp) {
+    quick(A, 0, n - 1, cmp);
 }

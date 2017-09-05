@@ -18,6 +18,8 @@
  * Proto type for quickSort function
  */
 
-void quickSort(int, int*);
+typedef int(*F)(const void*, const void*);
+
+void quickSort(int*, int, F);
 
 #endif
