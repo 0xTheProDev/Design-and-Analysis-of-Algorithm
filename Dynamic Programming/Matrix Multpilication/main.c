@@ -21,6 +21,6 @@ int main(int argc, char** argv) {
         A[i] = atoi(argv[i + 2]);
     }
     nmul = matMul(A, n);
-    printf("Total possible number of multiplication is: %d\n", nmul);
+    printf("Minimum cost of multiplication is: %d\n", nmul);
     return EXIT_SUCCESS;
 }
