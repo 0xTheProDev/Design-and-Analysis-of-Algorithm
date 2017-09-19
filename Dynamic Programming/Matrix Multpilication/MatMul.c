@@ -26,7 +26,7 @@ static int matChain(int *A, int i, int j) {
         count = matChain(A, i, k) + matChain(A, k + 1, j) + A[i - 1] * A[k] * A[j];
 	if (count < min) {
 	    min = count;
-	}
+	   }
     }
     // Load into cache
     cache[index] = min;
