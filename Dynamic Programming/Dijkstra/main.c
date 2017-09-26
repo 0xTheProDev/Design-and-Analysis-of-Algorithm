@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     int n = atoi(argv[1]);
-    int S = atoi(argv[2]);
+    int S = atoi(argv[2]) - 1;
     int G[n][n];
     for (int i = 0, j = 0; j < n || (j = 0, ++i) < n; j++) {
         if (i ^ j) {
@@ -22,6 +22,6 @@ int main(int argc, char** argv) {
             G[i][j] = 0;
         }
     }
-    dijkstraSP(n, G, S - 1);
+    dijkstraSP(n, G, S);
     return EXIT_SUCCESS;
 }
