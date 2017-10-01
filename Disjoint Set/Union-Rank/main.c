@@ -19,6 +19,6 @@ int main(int argc, char** argv) {
         scanf("%d %d", &edges[i].src, &edges[i].dest);
         --edges[i].src, --edges[i].dest;
     }
-    printf("This Graph does%scontain Cycle!\n", hasCycle(n, e, edges) ? " " : " not ");
+    printf("This Graph%sCycle!\n", hasCycle(n, e, edges) ? " contains " : " does not contain ");
     return EXIT_SUCCESS;
 }
