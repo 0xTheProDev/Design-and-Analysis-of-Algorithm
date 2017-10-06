@@ -24,5 +24,8 @@ int main(int argc, char const *argv[]) {
             default: return EXIT_FAILURE;
         }
     }
+    while (top(stack) != INT_MAX) {
+        pop(&stack);
+    }
     return EXIT_SUCCESS;
 }

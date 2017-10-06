@@ -24,5 +24,8 @@ int main(int argc, char const *argv[]) {
             default: return EXIT_FAILURE;
         }
     }
+    while (front(queue) != INT_MAX) {
+        pop(&queue);
+    }
     return EXIT_SUCCESS;
 }
