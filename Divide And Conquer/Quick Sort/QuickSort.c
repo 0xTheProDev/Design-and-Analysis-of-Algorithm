@@ -17,16 +17,15 @@ static int partition(int* A, int beg, int end, F cmp) {
     int i = beg - 1;
     for (int j = beg; j < end; j++) {
         if (cmp(&A[j], &pivot) < 0) {
-            i++;
-            swap(A, i, j);
+            swap(A, ++i, j);
     	}
     }
-    swap(A, i + 1, end);
-    return (i + 1);
+    swap(A, ++i, end);
+    return i;
 }
 
 static void quick(int* A, int start, int end, F cmp) {
-    if (end < start) {
+    if (end <= start) {
         return;
     }
     int middle = partition(A, start, end, cmp);
