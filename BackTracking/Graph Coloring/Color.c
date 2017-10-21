@@ -32,8 +32,8 @@ static int PutColor(int n, int Graph[n][n], int Vertex[n], int ver) {
 }
 
 void Color(int n, int Graph[n][n], int Vertex[n]) {
-    for (int i = 0, j = 0; j < n; i++, j++) {
-        Graph[i][j] = 0;
+    for (int i = 0; i < n; i++) {
+        Graph[i][i] = 0;
     }
     for (int i = 0; i < n; i++) {
         Vertex[i] = 0;

@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
     }
     int n = atoi(argv[1]);
     int Graph[n][n], Vertex[n];
-    printf("Enter Adjacency Matrix:\n");
+    printf("Enter Adjacency Matrix of Size %d X %d:\n", n, n);
     for (int i = 0, j = 0; j < n || (j = 0, ++i) < n; j++) {
         scanf("%d", Graph[i] + j);
     }
