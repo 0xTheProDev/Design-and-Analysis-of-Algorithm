@@ -10,7 +10,7 @@ static int find(int S[], int i) {
     if (S[i] != i) {
         return find(S, S[i]);
     }
-    return S[i];
+    return i;
 }
 
 static void Union(int S[], int i, int j) {
