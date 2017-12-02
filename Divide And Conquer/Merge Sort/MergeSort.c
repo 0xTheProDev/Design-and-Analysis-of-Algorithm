@@ -6,7 +6,7 @@
 
 #include "MergeSort.h"
 
-static void sort(int* A, int beg, int mid, int end) {
+static void sort(int* A, int beg, int mid, int end, int cmp(const void*, const void*)) {
     int i, j, k;
     int m = mid - beg + 1, n = end - mid;
     int B[m], C[n];
@@ -19,7 +19,7 @@ static void sort(int* A, int beg, int mid, int end) {
         // DEBUG printf("%i: %i ", j, C[j]);
     }
     for (i = j = 0, k = beg; k <= end; k++) {
-        if (i < m && ((j < n && B[i] < C[j]) || j >= n)) {
+        if (i < m && ((j < n && cmp(B + i, C + j) < 0) || j >= n)) {
             // Element of B comes first
             A[k] = B[i++];
             // DEBUG printf("B: k=%i i=%i val=%i\n", k, i, A[k]);
@@ -31,16 +31,16 @@ static void sort(int* A, int beg, int mid, int end) {
     }
 }
 
-static void merge(int n, int* A, int start, int end) {
+static void merge(int n, int* A, int start, int end, int cmp(const void*, const void*)) {
     if ((end - start) < 1) {
         return;
     }
     int middle = (start + end) / 2;
-    merge(n, A, start, middle);
-    merge(n, A, middle + 1, end);
-    sort(A, start, middle, end);
+    merge(n, A, start, middle, cmp);
+    merge(n, A, middle + 1, end, cmp);
+    sort(A, start, middle, end, cmp);
 }
 
-void mergeSort(int n, int* A) {
-    merge(n, A, 0, n - 1);
+void mergeSort(int* A, int n, int cmp(const void*, const void*)) {
+    merge(n, A, 0, n - 1, cmp);
 }

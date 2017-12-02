@@ -18,7 +18,7 @@
  * Proto type for mergeSort function
  */
 
-void mergeSort(int, int*);
+void mergeSort(int*, int, int(const void*, const void*));
 void pmergeSort(int, int*);
 
 #endif

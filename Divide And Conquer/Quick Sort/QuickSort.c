@@ -16,7 +16,7 @@ static int partition(int* A, int beg, int end, F cmp) {
     int pivot = A[end];
     int i = beg - 1;
     for (int j = beg; j < end; j++) {
-        if (cmp(&A[j], &pivot) < 0) {
+        if (cmp(A + j, &pivot) < 0) {
             swap(A, ++i, j);
     	}
     }
