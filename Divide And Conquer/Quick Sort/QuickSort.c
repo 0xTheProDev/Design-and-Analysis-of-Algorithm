@@ -13,6 +13,8 @@ static void swap(int* A, int i, int j) {
 }
 
 static int partition(int* A, int beg, int end, F cmp) {
+    int pindex = rand() % (end - beg + 1) + beg;
+    swap(A, pindex, end);
     int pivot = A[end];
     int i = beg - 1;
     for (int j = beg; j < end; j++) {
