@@ -26,8 +26,19 @@
      struct Node* right;
  } Node_t;
 
+ /*
+  * Prototype for Binary Tree Creation function
+  */
 Node_t* CreateBiTree(int n, int PreOrder[n], int InOrder[n]);
+
+/*
+ * Prototype for Postorder Traverse function
+ */
 void Trav_postorder(Node_t*);
+
+/*
+ * Prototype for Delete function
+ */
 void Delete(Node_t*);
 
 #endif

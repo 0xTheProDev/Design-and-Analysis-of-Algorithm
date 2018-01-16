@@ -8,7 +8,7 @@
 
 int main(int argc, char const *argv[]) {
     if (argc != 2) {
-        fprintf(stderr, "Usage: %s [n]\n", argv[0]);
+        fprintf(stderr, "Usage: %s [n: No. of Nodes]\n", argv[0]);
         return EXIT_FAILURE;
     }
     int n = atoi(argv[1]);
