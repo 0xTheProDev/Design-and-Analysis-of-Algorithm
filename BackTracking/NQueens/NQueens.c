@@ -17,7 +17,7 @@ static int isSafe(int n, int Board[n][n], int row, int col) {
             return 0;
         }
     }
-    for (int i = row, j = col; i < n && j < n; i++, j++) {
+    for (int i = row, j = col; i < n && j >= 0; i++, j--) {
         if (Board[i][j]) {
             return 0;
         }
