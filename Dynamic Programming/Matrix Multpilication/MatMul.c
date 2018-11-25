@@ -16,11 +16,11 @@ int matMul(int* A, int n) {
         for (int j = i + 1; j < m; j++) {
             for (int k = i; k < j; k++) {
                 int d = M[i][k] + M[k + 1][j] + A[i] * A[k + 1] * A[j + 1];
-                if (d < M[i][j]) {
+                if (d > 0 && d < M[i][j]) {
                     M[i][j] = d;
                 }
             }
         }
     }
-    return M[0][m];
+    return M[0][m-1];
 }
