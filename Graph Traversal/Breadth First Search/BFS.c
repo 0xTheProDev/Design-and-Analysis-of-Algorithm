@@ -16,8 +16,9 @@ void BFS(int v, int e, Edge_t E[e], int S[v], int root) {
         key = queue[++front];
         S[++count] = key;
         for (int i = 0; i < e; i++) {
-            if (E[i].src == key && visited[E[i].dest]) {
+            if (E[i].src == key && visited[E[i].dest - 1]) {
                 queue[++rear] = E[i].dest;
+                visited[E[i].dest - 1] = 0;
             }
         }
     }
